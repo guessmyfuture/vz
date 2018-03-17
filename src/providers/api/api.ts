@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Api {
   public static API_URL: string = 'http://www.airmate.in:8080/api';
+  
 
   constructor(public http: HttpClient) {
   }
