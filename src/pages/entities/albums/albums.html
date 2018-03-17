@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Portfolio</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="open()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<!-- todo: add elasticsearch support -->
+<ion-content padding>
+    <ion-refresher (ionRefresh)="loadAll($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+	<ion-card *ngFor="let albums of albums; trackBy: trackId" (click)="detail(albums)" >
+<img [src]="albums.cover"/>
+  <ion-card-content>
+     <ion-card-title class="center" *ngIf="lang == 'en'">
+     {{albums.titleEnglish}}
+      </ion-card-title>
+	  <ion-card-title class="center" *ngIf="lang == 'ta'">
+     {{albums.titleTamil}}
+      </ion-card-title>
+   <p class="center" style="color:#fff;">{{albums.date | date:'MMMM dd, yyyy '}}</p>
+  </ion-card-content>
+</ion-card>
+
+<!--
+    <ion-list>
+        <ion-item-sliding *ngFor="let albums of albums; trackBy: trackId" #slidingItem>
+            <button ion-item (click)="detail(albums)">
+                <p>{{albums.titleEnglish}}</p>
+                <p>{{albums.titleTamil}}</p>
+                <p>{{albums.date | date:'medium'}}</p>
+                <p>{{albums.user}}</p>
+                <p>{{albums.cover}}</p>
+            </button>
+            <ion-item-options>
+                <button ion-button color="primary" (click)="open(slidingItem, blog)">
+                    {{ 'EDIT_BUTTON' | translate }}
+                </button>
+                <button ion-button color="danger" (click)="delete(albums)">
+                    {{ 'DELETE_BUTTON' | translate }}
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>-->
+</ion-content>

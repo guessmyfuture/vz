@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Videos</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<div class="center">
+				<h2 class="center" *ngIf="lang == 'en'">{{videos.titleEnglish}}</h2>
+				<h2 class="center" *ngIf="lang == 'ta'">{{videos.titleTamil}}</h2>
+				
+				<ion-badge item-end>{{videos.date | date:'MMMM dd, yyyy '}}</ion-badge>
+				</div>
+				<br/>
+<iframe [src]="transform(videos.videoUrl)" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="100%" height="200"></iframe>
+
+<br/>
+
+<div [innerHtml]="videos.descriptionEnglish" *ngIf="lang == 'en'"></div>
+<div [innerHtml]="videos.descriptionTamil" *ngIf="lang == 'ta'"></div>
+
+
+<!--
+    <ion-list>
+        <ion-item>
+            <ion-label>Title English</ion-label>
+            <div item-content>
+                <span>{{videos.titleEnglish}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Title Tamil</ion-label>
+            <div item-content>
+                <span>{{videos.titleTamil}}</span>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <div item-content>
+                <span>{{videos.date | date:'medium'}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>User</ion-label>
+            <div item-content>
+                <span>{{videos.user}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description English</ion-label>
+            <div item-content>
+                <span>{{videos.descriptionEnglish}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description Tamil</ion-label>
+            <div item-content>
+                <span>{{videos.descriptionTamil}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button block (click)="open(videos)">{{ 'EDIT_BUTTON' | translate }}</button>-->
+</ion-content>

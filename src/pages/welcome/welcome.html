@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Welcome!
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <span class="hipster"></span>
+	<div class="center">
+  <p class="party-font">Natham R Viswanathan</p>
+  </div>
+    <div class="center">
+        <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+
+        <p>Don't have an account yet?</p>
+        <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
+		<br/>
+		<a (click)="skip()" style="border-bottom: 1px solid;"> Skip now, I will sign up later</a>
+    </div>
+</ion-content>

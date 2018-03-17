@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Problems</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="open()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<!-- todo: add elasticsearch support -->
+<ion-content padding>
+    <ion-refresher (ionRefresh)="loadAll($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+	<ion-card *ngFor="let problems of problems; trackBy: trackId" (click)="detail(problems)">
+  <ion-card-content *ngIf="problems.verified">
+    <ion-card-title class="center">
+     {{problems.title}}
+      </ion-card-title>
+   <p class="center" style="color:#fff;">{{problems.user}}</p>
+   <br/>
+   <p><span style="color: #fff;">{{problems.category}}</span><span style="float: right;color: #fff;">{{problems.date | date:'MMMM dd, yyyy'}}</span></p>
+  </ion-card-content>
+</ion-card>
+	
+	<!--
+    <ion-list>
+        <ion-item-sliding *ngFor="let problems of problems; trackBy: trackId" #slidingItem>
+            <button ion-item (click)="detail(problems)">
+                <h2>{{problems.title}}</h2>
+                <p>{{problems.description}}</p>
+                <p>{{problems.issueId}}</p>
+                <p>{{problems.category}}</p>
+                <p>{{problems.user}}</p>
+                <p>{{problems.date | date:'medium'}}</p>
+                <p>{{problems.verified}}</p>
+            </button>
+            <ion-item-options>
+                <button ion-button color="primary" (click)="open(slidingItem, blog)">
+                    {{ 'EDIT_BUTTON' | translate }}
+                </button>
+                <button ion-button color="danger" (click)="delete(problems)">
+                    {{ 'DELETE_BUTTON' | translate }}
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>-->
+</ion-content>

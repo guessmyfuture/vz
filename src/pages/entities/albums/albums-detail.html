@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Albums</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<h2 class="center" *ngIf="lang == 'en'">{{albums.titleEnglish}}</h2>
+<h2 class="center" *ngIf="lang == 'ta'">{{albums.titleTamil}}</h2>
+				
+<p class="center">{{albums.date | date:'MMMM dd, yyyy'}}</p>
+
+
+<ion-card>
+<img [src]="albums.cover"/>
+</ion-card>
+<ion-card *ngFor="let images of images; trackBy: trackId">
+<img [src]="images.imageUrl"/>
+</ion-card>
+
+
+<!--
+    <ion-list>
+        <ion-item>
+            <ion-label>Title English</ion-label>
+            <div item-content>
+                <span>{{albums.titleEnglish}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Title Tamil</ion-label>
+            <div item-content>
+                <span>{{albums.titleTamil}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <div item-content>
+                <span>{{albums.date | date:'medium'}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>User</ion-label>
+            <div item-content>
+                <span>{{albums.user}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Cover</ion-label>
+            <div item-content>
+                <span>{{albums.cover}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button block (click)="open(albums)">{{ 'EDIT_BUTTON' | translate }}</button>-->
+</ion-content>

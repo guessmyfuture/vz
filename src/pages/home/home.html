@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Welcome, {{account?.firstName}}!
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        Logout
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div>
+ <ion-slides autoplay="1500" loop="true" zoom="true">
+  <ion-slide>
+    <img src="https://www.travelexcellence.com/images/movil/La_Paz_Waterfall.jpg" style="border-radius: 5%;"/>
+  </ion-slide>
+  <ion-slide>
+    <img src="http://www.parasholidays.in/blog/wp-content/uploads/2014/05/holiday-tour-packages-for-usa.jpg" style="border-radius: 5%;"/>
+  </ion-slide>
+  <ion-slide>
+    <img src="https://www.travelexcellence.com/images/movil/La_Paz_Waterfall.jpg" style="border-radius: 5%;"/>
+  </ion-slide>
+</ion-slides>
+</div>
+ <div class="center">
+  <p class="party-font">Natham R Viswanathan</p>
+  <p class="sub-title">Welcomes you gladly</p>
+  <img src="https://image.vikatan.com/news/2016/03/19/images/Natham+viswanathan350.jpg" style="border-radius: 5%;"/>
+  </div>
+</ion-content>
+

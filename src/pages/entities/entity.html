@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--<ion-list>
+    <ion-item *ngFor="let entity of entities" (click)="openPage(entity)">
+      <h2>{{entity.name}}</h2>
+    </ion-item>
+  </ion-list>-->
+  
+  <ion-grid>
+  <ion-row class="center menu-h">
+    <ion-col col-4 (click)="openPage('NewsPage')">
+	<img src="https://cdn1.iconfinder.com/data/icons/google_jfk_icons_by_carlosjj/128/news.png" style="width:75px"/>
+	News
+	</ion-col>
+	<ion-col col-4 (click)="openPage('AlbumsPage')">
+	<img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Images-128.png" style="width:75px"/>
+	Portfolio
+	</ion-col>
+	<ion-col col-4 (click)="openPage('VideosPage')">
+	<img src="https://cdn2.iconfinder.com/data/icons/clean-and-simple/153/Videos-128.png" style="width:75px"/>
+	Videos
+	</ion-col>
+  </ion-row>
+  <br/>
+  <br/>
+  <ion-row class="center menu-h">
+    <ion-col col-4 (click)="openPage('ProblemsPage')">
+	<img src="https://image.flaticon.com/icons/svg/767/767406.svg" style="width:75px"/>
+	Problems
+	</ion-col>
+	<ion-col col-4 (click)="openPage('AboutPage')">
+	<img src="https://image.vikatan.com/news/2016/03/19/images/Natham+viswanathan350.jpg" style="width:75px;border-radius: 50%;
+    height: 75px;"/>
+	About Me
+	</ion-col>
+	<ion-col col-4 (click)="openPage('SocialConnectPage')">
+	<img src="https://cdn3.iconfinder.com/data/icons/social-network-2/512/650867-facebook-128.png" style="width:75px"/>
+	Social Connect
+	</ion-col>
+  </ion-row>
+</ion-grid>
+
+<br/>
+<br/>
+
+  
+  <!--<ion-item>
+  <ion-label>Select Your Language</ion-label>
+  <ion-select [(ngModel)]="langes" (change)="translatelang(lang.code)">
+	<ion-option *ngFor="#lang of languages" [value] = "lang.code" [checked]="false">{{lang.name}}</ion-option>
+  </ion-select>
+</ion-item>-->
+
+<ion-list>
+  <ion-item>
+    <ion-label>Select Your Language</ion-label>
+    <ion-select [(ngModel)]="lang" (ionChange)="translatelang(lang)">
+      <ion-option value="en">English</ion-option>
+      <ion-option value="ta">Tamil</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+  
+  
+</ion-content>

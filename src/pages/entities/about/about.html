@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>About Me</ion-title>
+    </ion-navbar>
+</ion-header>
+<!-- todo: add elasticsearch support -->
+<ion-content padding>
+    <ion-refresher (ionRefresh)="loadAll($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div class="center">
+	<img src="https://image.vikatan.com/news/2016/03/19/images/Natham+viswanathan350.jpg" style="border-radius:5%"/>
+	<br/><br/>
+	<div *ngIf="lang == 'ta'">
+	ஆர். விஸ்வநாதன், நத்தம் ஆர்.விஸ்வநாதன் எனவும் அழைக்கப்படுகிறார். விஸ்வநாதன் ஒரு இந்திய அரசியல்வாதியும் முன்னாள் நத்தம் சட்டமன்றத் தொகுதியின் சட்டமன்ற உறுப்பினரும் , முன்னாள் அமைச்சரும் ஆவார் . முன்னர், அவர் தமிழக சட்டமன்றத்தில் அண்ணா திராவிட முன்னேற்ற கழக வேட்பாளராக நத்தம் தொகுதியில் தேர்ந்தெடுக்கப்பட்டார். 2001, 2006 ஆம் ஆண்டுகளில் அவர் தொடர்ச்சியாக வெற்றி பெற்றார் 2011 தேர்தலில் மகத்தான வெற்றி பெற்றார்.
+	</div>
+	<div *ngIf="lang == 'en'">
+	R. Viswanathan also known as Natham R. Viswanathan is an Indian politician and former member of the Tamil Nadu Legislative Assembly from Natham Constituency. He was the Minister for Electricity and Prohibition and Excise, Govt. of Tamil Nadu. Previously, he was elected to the Tamil Nadu legislative assembly as an Anna Dravida Munnetra Kazhagam candidate from Natham constituency in 1999. He has won consecutively in 2001, 2006 and 2011 elections in a landslide vote count.
+	</div>	
+	</div>
+</ion-content>

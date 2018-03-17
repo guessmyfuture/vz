@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Problems</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<div class="center">
+				<h2 class="center">{{problems.title}}</h2>
+				<ion-badge item-end>{{problems.date | date:'MMMM dd, yyyy '}}</ion-badge>
+				<ion-badge color="secondary" item-end>{{problems.category}}</ion-badge>
+				<br/>
+				<br/>
+				<ion-badge color="danger">{{problems.user}}</ion-badge>
+				<br/>
+				<div [innerHtml]="problems.description"></div>
+				</div>
+				<hr>
+				
+				
+				
+				
+	<!--			
+    <ion-list>
+        <ion-item>
+            <ion-label>Title</ion-label>
+            <div item-content>
+                <span>{{problems.title}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description</ion-label>
+            <div item-content>
+                <span>{{problems.description}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Issue Id</ion-label>
+            <div item-content>
+                <span>{{problems.issueId}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Category</ion-label>
+            <div item-content>
+                <span>{{problems.category}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>User</ion-label>
+            <div item-content>
+                <span>{{problems.user}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <div item-content>
+                <span>{{problems.date | date:'medium'}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Verified</ion-label>
+            <div item-content>
+                <span>{{problems.verified}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button block (click)="open(problems)">{{ 'EDIT_BUTTON' | translate }}</button>-->
+</ion-content>

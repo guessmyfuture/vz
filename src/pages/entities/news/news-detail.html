@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>News</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<div class="center">
+				<h2 class="center" *ngIf="lang == 'en'">{{news.titleEnglish}}</h2>
+				<h2 class="center" *ngIf="lang == 'ta'">{{news.titleTamil}}</h2>
+				<ion-badge item-end>{{news.date | date:'MMMM dd, yyyy '}}</ion-badge>
+				</div>
+				<br/>
+<img [src]="news.coverUrl" style="border-radius:5px;"/>
+
+<br/>
+<br/>
+<div [innerHtml]="news.descriptionEnglish" *ngIf="lang == 'en'"></div>
+<div [innerHtml]="news.descriptionTamil" *ngIf="lang == 'ta'"></div>
+
+<!--
+    <ion-list>
+        <ion-item>
+            <ion-label>Title English</ion-label>
+            <div item-content>
+                <span>{{news.titleEnglish}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Title Tamil</ion-label>
+            <div item-content>
+                <span>{{news.titleTamil}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Cover Url</ion-label>
+            <div item-content>
+                <span>{{news.coverUrl}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description English</ion-label>
+            <div item-content>
+                <span>{{news.descriptionEnglish}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description Tamil</ion-label>
+            <div item-content>
+                <span>{{news.descriptionTamil}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <div item-content>
+                <span>{{news.date | date:'medium'}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>User</ion-label>
+            <div item-content>
+                <span>{{news.user}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button block (click)="open(news)">{{ 'EDIT_BUTTON' | translate }}</button>-->
+</ion-content>

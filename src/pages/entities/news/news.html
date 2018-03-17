@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>News</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="open()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<!-- todo: add elasticsearch support -->
+<ion-content padding>
+    <ion-refresher (ionRefresh)="loadAll($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+<ion-card *ngFor="let news of news; trackBy: trackId" (click)="detail(news)" >
+<img [src]="news.coverUrl"/>
+  <ion-card-content>
+    <ion-card-title class="center" *ngIf="lang == 'en'">
+     {{news.titleEnglish}}
+      </ion-card-title>
+	  <ion-card-title class="center" *ngIf="lang == 'ta'">
+     {{news.titleTamil}}
+      </ion-card-title>
+   <p class="center" style="color:#fff;">{{news.date | date:'MMMM dd, yyyy '}}</p>
+  </ion-card-content>
+</ion-card>
+
+   <!-- <ion-list>
+        <ion-item-sliding *ngFor="let news of news; trackBy: trackId" #slidingItem>
+            <button ion-item (click)="detail(news)">
+                <p>{{news.titleEnglish}}</p>
+                <p>{{news.titleTamil}}</p>
+                <p>{{news.coverUrl}}</p>
+                <p>{{news.descriptionEnglish}}</p>
+                <p>{{news.descriptionTamil}}</p>
+                <p>{{news.date | date:'medium'}}</p>
+                <p>{{news.user}}</p>
+				<div class="center">
+				<h2>{{news.titleEnglish}}</h2>
+				<ion-badge item-end>{{news.date | date:'MMMM dd, yyyy '}}</ion-badge>
+				</div>
+				<img [src]="news.coverUrl" style="border-radius: 5%;"/>
+            </button>
+			
+          <ion-item-options>
+                <button ion-button color="primary" (click)="open(slidingItem, blog)">
+                    {{ 'EDIT_BUTTON' | translate }}
+                </button>
+                <button ion-button color="danger" (click)="delete(news)">
+                    {{ 'DELETE_BUTTON' | translate }}
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>-->
+</ion-content>

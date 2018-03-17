@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Videos</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="open()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<!-- todo: add elasticsearch support -->
+<ion-content padding>
+    <ion-refresher (ionRefresh)="loadAll($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+<ion-card *ngFor="let videos of videos; trackBy: trackId">
+  <ion-card-content>
+   <ion-card-title class="center" *ngIf="lang == 'en'" (click)="detail(videos)">
+     {{videos.titleEnglish}}
+      </ion-card-title>
+	  <ion-card-title class="center" *ngIf="lang == 'ta'" (click)="detail(videos)">
+     {{videos.titleTamil}}
+      </ion-card-title>
+	  
+   <p class="center" style="color:#fff;">{{videos.date | date:'MMMM dd, yyyy '}}</p>
+   <iframe [src]="transform(videos.videoUrl)" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="100%" height="200"></iframe>
+  </ion-card-content>
+</ion-card>
+
+   <!-- <ion-list>
+        <ion-item-sliding *ngFor="let videos of videos; trackBy: trackId" #slidingItem>
+            <button ion-item (click)="detail(videos)">
+                <p>{{videos.titleEnglish}}</p>
+                <p>{{videos.titleTamil}}</p>
+                <p>{{videos.videoUrl}}</p>
+                <p>{{videos.date | date:'medium'}}</p>
+                <p>{{videos.user}}</p>
+                <p>{{videos.descriptionEnglish}}</p>
+                <p>{{videos.descriptionTamil}}</p>
+				<div class="center">
+				<h2>{{videos.titleEnglish}}</h2>
+				<ion-badge item-end>{{videos.date | date:'MMMM dd, yyyy '}}</ion-badge>
+				</div>
+            </button>
+			<ion-item-options>
+                <button ion-button color="primary" (click)="open(slidingItem, blog)">
+                    {{ 'EDIT_BUTTON' | translate }}
+                </button>
+                <button ion-button color="danger" (click)="delete(videos)">
+                    {{ 'DELETE_BUTTON' | translate }}
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>-->
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Solutions</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Reply Description English</ion-label>
+            <div item-content>
+                <span>{{solutions.replyDescriptionEnglish}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Reply Description Tamil</ion-label>
+            <div item-content>
+                <span>{{solutions.replyDescriptionTamil}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <div item-content>
+                <span>{{solutions.date | date:'medium'}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>User</ion-label>
+            <div item-content>
+                <span>{{solutions.user}}</span>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label>Issue Id</ion-label>
+            <div item-content>
+                <span>{{solutions.issueId}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button block (click)="open(solutions)">{{ 'EDIT_BUTTON' | translate }}</button>
+</ion-content>
